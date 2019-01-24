@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Orario" targetNamespace="http://tempuri.org/Orario.xsd" xmlns:mstns="http://tempuri.org/Orario.xsd" xmlns="http://tempuri.org/Orario.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Orario" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Orario" msprop:Generator_UserDSName="Orario">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Classi" msprop:Generator_TableClassName="ClassiDataTable" msprop:Generator_TableVarName="tableClassi" msprop:Generator_TablePropName="Classi" msprop:Generator_RowDeletingName="ClassiRowDeleting" msprop:Generator_RowChangingName="ClassiRowChanging" msprop:Generator_RowEvHandlerName="ClassiRowChangeEventHandler" msprop:Generator_RowDeletedName="ClassiRowDeleted" msprop:Generator_UserTableName="Classi" msprop:Generator_RowChangedName="ClassiRowChanged" msprop:Generator_RowEvArgName="ClassiRowChangeEvent" msprop:Generator_RowClassName="ClassiRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idClaPk" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnidClaPk" msprop:Generator_ColumnPropNameInRow="idClaPk" msprop:Generator_ColumnPropNameInTable="idClaPkColumn" msprop:Generator_UserColumnName="idClaPk" type="xs:int" minOccurs="0" />
+              <xs:element name="Nome" msprop:Generator_ColumnVarNameInTable="columnNome" msprop:Generator_ColumnPropNameInRow="Nome" msprop:Generator_ColumnPropNameInTable="NomeColumn" msprop:Generator_UserColumnName="Nome" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Docenti" msprop:Generator_TableClassName="DocentiDataTable" msprop:Generator_TableVarName="tableDocenti" msprop:Generator_TablePropName="Docenti" msprop:Generator_RowDeletingName="DocentiRowDeleting" msprop:Generator_RowChangingName="DocentiRowChanging" msprop:Generator_RowEvHandlerName="DocentiRowChangeEventHandler" msprop:Generator_RowDeletedName="DocentiRowDeleted" msprop:Generator_UserTableName="Docenti" msprop:Generator_RowChangedName="DocentiRowChanged" msprop:Generator_RowEvArgName="DocentiRowChangeEvent" msprop:Generator_RowClassName="DocentiRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idDocPk" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnidDocPk" msprop:Generator_ColumnPropNameInRow="idDocPk" msprop:Generator_ColumnPropNameInTable="idDocPkColumn" msprop:Generator_UserColumnName="idDocPk" type="xs:int" />
+              <xs:element name="Nome" msprop:Generator_ColumnVarNameInTable="columnNome" msprop:Generator_ColumnPropNameInRow="Nome" msprop:Generator_ColumnPropNameInTable="NomeColumn" msprop:Generator_UserColumnName="Nome" type="xs:string" minOccurs="0" />
+              <xs:element name="Cognome" msprop:Generator_ColumnVarNameInTable="columnCognome" msprop:Generator_ColumnPropNameInRow="Cognome" msprop:Generator_ColumnPropNameInTable="CognomeColumn" msprop:Generator_UserColumnName="Cognome" type="xs:string" minOccurs="0" />
+              <xs:element name="idMat" msprop:Generator_ColumnVarNameInTable="columnidMat" msprop:Generator_ColumnPropNameInRow="idMat" msprop:Generator_ColumnPropNameInTable="idMatColumn" msprop:Generator_UserColumnName="idMat" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Materie" msprop:Generator_TableClassName="MaterieDataTable" msprop:Generator_TableVarName="tableMaterie" msprop:Generator_TablePropName="Materie" msprop:Generator_RowDeletingName="MaterieRowDeleting" msprop:Generator_RowChangingName="MaterieRowChanging" msprop:Generator_RowEvHandlerName="MaterieRowChangeEventHandler" msprop:Generator_RowDeletedName="MaterieRowDeleted" msprop:Generator_UserTableName="Materie" msprop:Generator_RowChangedName="MaterieRowChanged" msprop:Generator_RowEvArgName="MaterieRowChangeEvent" msprop:Generator_RowClassName="MaterieRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idMatPk" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnidMatPk" msprop:Generator_ColumnPropNameInRow="idMatPk" msprop:Generator_ColumnPropNameInTable="idMatPkColumn" msprop:Generator_UserColumnName="idMatPk" type="xs:int" minOccurs="0" />
+              <xs:element name="Nome" msprop:Generator_ColumnVarNameInTable="columnNome" msprop:Generator_ColumnPropNameInRow="Nome" msprop:Generator_ColumnPropNameInTable="NomeColumn" msprop:Generator_UserColumnName="Nome" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Orari" msprop:Generator_TableClassName="OrariDataTable" msprop:Generator_TableVarName="tableOrari" msprop:Generator_TablePropName="Orari" msprop:Generator_RowDeletingName="OrariRowDeleting" msprop:Generator_RowChangingName="OrariRowChanging" msprop:Generator_RowEvHandlerName="OrariRowChangeEventHandler" msprop:Generator_RowDeletedName="OrariRowDeleted" msprop:Generator_UserTableName="Orari" msprop:Generator_RowChangedName="OrariRowChanged" msprop:Generator_RowEvArgName="OrariRowChangeEvent" msprop:Generator_RowClassName="OrariRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idOrPk" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnidOrPk" msprop:Generator_ColumnPropNameInRow="idOrPk" msprop:Generator_ColumnPropNameInTable="idOrPkColumn" msprop:Generator_UserColumnName="idOrPk" type="xs:short" />
+              <xs:element name="Ora" msprop:Generator_ColumnVarNameInTable="columnOra" msprop:Generator_ColumnPropNameInRow="Ora" msprop:Generator_ColumnPropNameInTable="OraColumn" msprop:Generator_UserColumnName="Ora" type="xs:unsignedShort" minOccurs="0" />
+              <xs:element name="Giorno" msprop:Generator_ColumnVarNameInTable="columnGiorno" msprop:Generator_ColumnPropNameInRow="Giorno" msprop:Generator_ColumnPropNameInTable="GiornoColumn" msprop:Generator_UserColumnName="Giorno" type="xs:unsignedShort" minOccurs="0" />
+              <xs:element name="idDoc" msprop:Generator_ColumnVarNameInTable="columnidDoc" msprop:Generator_ColumnPropNameInRow="idDoc" msprop:Generator_ColumnPropNameInTable="idDocColumn" msprop:Generator_UserColumnName="idDoc" type="xs:int" minOccurs="0" />
+              <xs:element name="idCla" msprop:Generator_ColumnVarNameInTable="columnidCla" msprop:Generator_ColumnPropNameInRow="idCla" msprop:Generator_ColumnPropNameInTable="idClaColumn" msprop:Generator_UserColumnName="idCla" type="xs:int" minOccurs="0" />
+              <xs:element name="idMat" msprop:Generator_ColumnVarNameInTable="columnidMat" msprop:Generator_ColumnPropNameInRow="idMat" msprop:Generator_ColumnPropNameInTable="idMatColumn" msprop:Generator_UserColumnName="idMat" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:Classi" />
+      <xs:field xpath="mstns:idClaPk" />
+    </xs:unique>
+    <xs:unique name="Docenti_Constraint1" msdata:ConstraintName="Constraint1">
+      <xs:selector xpath=".//mstns:Docenti" />
+      <xs:field xpath="mstns:idDocPk" />
+    </xs:unique>
+    <xs:unique name="Materie_Constraint1" msdata:ConstraintName="Constraint1">
+      <xs:selector xpath=".//mstns:Materie" />
+      <xs:field xpath="mstns:idMatPk" />
+    </xs:unique>
+    <xs:unique name="Orari_Constraint1" msdata:ConstraintName="Constraint1">
+      <xs:selector xpath=".//mstns:Orari" />
+      <xs:field xpath="mstns:idOrPk" />
+    </xs:unique>
+    <xs:keyref name="FK_Materie_Orari" refer="Materie_Constraint1" msprop:rel_Generator_UserChildTable="Orari" msprop:rel_Generator_ChildPropName="GetOrariRows" msprop:rel_Generator_UserRelationName="FK_Materie_Orari" msprop:rel_Generator_ParentPropName="MaterieRow" msprop:rel_Generator_RelationVarName="relationFK_Materie_Orari" msprop:rel_Generator_UserParentTable="Materie">
+      <xs:selector xpath=".//mstns:Orari" />
+      <xs:field xpath="mstns:idMat" />
+    </xs:keyref>
+    <xs:keyref name="FK_Classi_Orari" refer="Constraint1" msprop:rel_Generator_UserChildTable="Orari" msprop:rel_Generator_ChildPropName="GetOrariRows" msprop:rel_Generator_UserRelationName="FK_Classi_Orari" msprop:rel_Generator_ParentPropName="ClassiRow" msprop:rel_Generator_RelationVarName="relationFK_Classi_Orari" msprop:rel_Generator_UserParentTable="Classi">
+      <xs:selector xpath=".//mstns:Orari" />
+      <xs:field xpath="mstns:idCla" />
+    </xs:keyref>
+    <xs:keyref name="FK_Docenti_Orari" refer="Docenti_Constraint1" msprop:rel_Generator_UserChildTable="Orari" msprop:rel_Generator_ChildPropName="GetOrariRows" msprop:rel_Generator_UserRelationName="FK_Docenti_Orari" msprop:rel_Generator_ParentPropName="DocentiRow" msprop:rel_Generator_RelationVarName="relationFK_Docenti_Orari" msprop:rel_Generator_UserParentTable="Docenti">
+      <xs:selector xpath=".//mstns:Orari" />
+      <xs:field xpath="mstns:idDoc" />
+    </xs:keyref>
+    <xs:keyref name="FK_Materie_Docenti" refer="Materie_Constraint1" msprop:rel_Generator_UserChildTable="Docenti" msprop:rel_Generator_ChildPropName="GetDocentiRows" msprop:rel_Generator_UserRelationName="FK_Materie_Docenti" msprop:rel_Generator_RelationVarName="relationFK_Materie_Docenti" msprop:rel_Generator_UserParentTable="Materie" msprop:rel_Generator_ParentPropName="MaterieRow">
+      <xs:selector xpath=".//mstns:Docenti" />
+      <xs:field xpath="mstns:idMat" />
+    </xs:keyref>
+  </xs:element>
+</xs:schema>
