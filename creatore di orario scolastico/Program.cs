@@ -16,7 +16,7 @@ namespace creatore_di_orario_scolastico
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new TabellaOrari());
         }
     }
 }
