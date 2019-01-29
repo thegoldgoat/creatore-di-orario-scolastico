@@ -30,11 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idOrPkDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.giornoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDocDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idClaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orariBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.orarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.orario = new creatore_di_orario_scolastico.Orario();
@@ -52,6 +47,11 @@
             this.cognomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idMatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.docentiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idOrPkDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.giornoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idClaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDocDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orariBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orarioBindingSource)).BeginInit();
@@ -72,44 +72,14 @@
             this.idOrPkDataGridViewTextBoxColumn,
             this.oraDataGridViewTextBoxColumn,
             this.giornoDataGridViewTextBoxColumn,
-            this.idDocDataGridViewTextBoxColumn,
-            this.idClaDataGridViewTextBoxColumn});
+            this.idClaDataGridViewTextBoxColumn,
+            this.idDocDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.orariBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(543, 462);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // idOrPkDataGridViewTextBoxColumn
-            // 
-            this.idOrPkDataGridViewTextBoxColumn.DataPropertyName = "idOrPk";
-            this.idOrPkDataGridViewTextBoxColumn.HeaderText = "idOrPk";
-            this.idOrPkDataGridViewTextBoxColumn.Name = "idOrPkDataGridViewTextBoxColumn";
-            // 
-            // oraDataGridViewTextBoxColumn
-            // 
-            this.oraDataGridViewTextBoxColumn.DataPropertyName = "Ora";
-            this.oraDataGridViewTextBoxColumn.HeaderText = "Ora";
-            this.oraDataGridViewTextBoxColumn.Name = "oraDataGridViewTextBoxColumn";
-            // 
-            // giornoDataGridViewTextBoxColumn
-            // 
-            this.giornoDataGridViewTextBoxColumn.DataPropertyName = "Giorno";
-            this.giornoDataGridViewTextBoxColumn.HeaderText = "Giorno";
-            this.giornoDataGridViewTextBoxColumn.Name = "giornoDataGridViewTextBoxColumn";
-            // 
-            // idDocDataGridViewTextBoxColumn
-            // 
-            this.idDocDataGridViewTextBoxColumn.DataPropertyName = "idDoc";
-            this.idDocDataGridViewTextBoxColumn.HeaderText = "idDoc";
-            this.idDocDataGridViewTextBoxColumn.Name = "idDocDataGridViewTextBoxColumn";
-            // 
-            // idClaDataGridViewTextBoxColumn
-            // 
-            this.idClaDataGridViewTextBoxColumn.DataPropertyName = "idCla";
-            this.idClaDataGridViewTextBoxColumn.HeaderText = "idCla";
-            this.idClaDataGridViewTextBoxColumn.Name = "idClaDataGridViewTextBoxColumn";
             // 
             // orariBindingSource
             // 
@@ -230,6 +200,36 @@
             this.docentiBindingSource.DataMember = "Docenti";
             this.docentiBindingSource.DataSource = this.orarioBindingSource;
             // 
+            // idOrPkDataGridViewTextBoxColumn
+            // 
+            this.idOrPkDataGridViewTextBoxColumn.DataPropertyName = "idOrPk";
+            this.idOrPkDataGridViewTextBoxColumn.HeaderText = "idOrPk";
+            this.idOrPkDataGridViewTextBoxColumn.Name = "idOrPkDataGridViewTextBoxColumn";
+            // 
+            // oraDataGridViewTextBoxColumn
+            // 
+            this.oraDataGridViewTextBoxColumn.DataPropertyName = "Ora";
+            this.oraDataGridViewTextBoxColumn.HeaderText = "Ora";
+            this.oraDataGridViewTextBoxColumn.Name = "oraDataGridViewTextBoxColumn";
+            // 
+            // giornoDataGridViewTextBoxColumn
+            // 
+            this.giornoDataGridViewTextBoxColumn.DataPropertyName = "Giorno";
+            this.giornoDataGridViewTextBoxColumn.HeaderText = "Giorno";
+            this.giornoDataGridViewTextBoxColumn.Name = "giornoDataGridViewTextBoxColumn";
+            // 
+            // idClaDataGridViewTextBoxColumn
+            // 
+            this.idClaDataGridViewTextBoxColumn.DataPropertyName = "idCla";
+            this.idClaDataGridViewTextBoxColumn.HeaderText = "idCla";
+            this.idClaDataGridViewTextBoxColumn.Name = "idClaDataGridViewTextBoxColumn";
+            // 
+            // idDocDataGridViewTextBoxColumn
+            // 
+            this.idDocDataGridViewTextBoxColumn.DataPropertyName = "idDoc";
+            this.idDocDataGridViewTextBoxColumn.HeaderText = "idDoc";
+            this.idDocDataGridViewTextBoxColumn.Name = "idDocDataGridViewTextBoxColumn";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,11 +259,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idOrPkDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oraDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn giornoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDocDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idClaDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource orariBindingSource;
         private System.Windows.Forms.BindingSource orarioBindingSource;
         private Orario orario;
@@ -281,6 +276,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cognomeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idMatDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource docentiBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idOrPkDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oraDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn giornoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idClaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDocDataGridViewTextBoxColumn;
     }
 }
 
