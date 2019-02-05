@@ -55,7 +55,7 @@ namespace creatore_di_orario_scolastico
                 {
                     // Genera la lista con tutte le classi
                     List<int> listaPoolClassi = new List<int>(listaClassi);
-                    
+
 
                     for (int docente = 0; docente < 5; docente++)
                     {
@@ -74,7 +74,7 @@ namespace creatore_di_orario_scolastico
         private int ottieniMateriaDaDocente(int idDocente)
         {
             int idTrovato = -1;
-            foreach ( DocentiRow docente in tableDocenti)
+            foreach (DocentiRow docente in tableDocenti)
                 if (docente.idDocPk == idDocente)
                 {
                     idTrovato = docente.idMat;
@@ -86,11 +86,11 @@ namespace creatore_di_orario_scolastico
 
             return idTrovato;
         }
-    
+
         partial class DocentiDataTable
         {
         }
-        
+
         partial class ClassiDataTable
         {
         }

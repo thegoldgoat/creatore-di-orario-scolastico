@@ -28,6 +28,10 @@ namespace creatore_di_orario_scolastico
         }
 
         // Mostra l'orario sulla Windows Form
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="nomeClasse"></param>
         private void visualizzaOrario(String nomeClasse)
         {
             // Cerca l'id della classe partendo dal nome
@@ -48,20 +52,60 @@ namespace creatore_di_orario_scolastico
             dataGridView1.Columns.Clear();
 
             // Mostra colonne
-            dataGridView1.Columns.Add("Ora", "Ora");
-            dataGridView1.Columns.Add("Lun", "Lun");
-            dataGridView1.Columns.Add("Mar", "Mar");
-            dataGridView1.Columns.Add("Mer", "Mer");
-            dataGridView1.Columns.Add("Gio", "Gio");
-            dataGridView1.Columns.Add("Ven", "Ven");
+            dataGridView1.Columns.Add("Giorno", "Giorno");
+            dataGridView1.Columns.Add("1", "1");
+            dataGridView1.Columns.Add("2", "2");
+            dataGridView1.Columns.Add("3", "3");
+            dataGridView1.Columns.Add("4", "4");
+            dataGridView1.Columns.Add("5", "5");
 
             // Inserisci tutte le righe
-            
+
+            var query =
+                from ora in orario.Orari.AsEnumerable()
+                where ora.Field<int>("idCla") == trovato
+                join classe in orario.Classi.AsEnumerable()
+                    on ora.Field<int>("idCla") equals
+                        classe.Field<int>("idClaPk")
+                join docente in orario.Docenti.AsEnumerable()
+                    on ora.Field<int>("idDoc") equals
+                        docente.Field<int>("idDocPk")
+                join materia in orario.Materie.AsEnumerable()
+                    on ora.Field<int>("idMat") equals
+                        materia.Field<int>("idMatPk")
+                orderby ora.Giorno, ora.Ora
+                select new
+                {
+                    Ora = ora.Ora,
+                    Giorno = ora.Giorno,
+                    NomeDocente = docente.Nome,
+                    CognomeDocente = docente.Cognome,
+                    NomeMateria = materia.Nome
+                };
+
+
+            List<string> listaRiga = new List<string>();
+            foreach ( var rigaOra in query)
+            {
+                listaRiga.Add(rigaOra.NomeMateria);
+                if(listaRiga.Count == 5)
+                {
+                    dataGridView1.Rows.Add(
+                        rigaOra.Giorno,
+                        listaRiga[0],
+                        listaRiga[1],
+                        listaRiga[2],
+                        listaRiga[3],
+                        listaRiga[4]
+                    );
+                    listaRiga.Clear();
+                }
+            }
         }
 
         private void listaClassi_SelectedIndexChanged(object sender, EventArgs e)
         {
-            visualizzaOrario(listaClassi.SelectedText);
+            visualizzaOrario(listaClassi.SelectedItem as String);
         }
     }
 }
