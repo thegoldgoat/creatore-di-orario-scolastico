@@ -63,6 +63,7 @@ namespace creatore_di_orario_scolastico
                         sceltaRandom = randomizzatore.Next(listaPoolClassi.Count);
 
                         tableOrari.Rows.Add(idIncrementaleOrario++, ora, giorno, docente, listaPoolClassi[sceltaRandom], ottieniMateriaDaDocente(docente));
+                        listaPoolClassi.RemoveAt(sceltaRandom);
                     }
                 }
             }
