@@ -12,6 +12,14 @@ namespace creatore_di_orario_scolastico
 {
     public partial class TabellaOrari : Form
     {
+        public static Color[] colori = new Color[]
+        {
+            Color.Aqua,
+            Color.OrangeRed,
+            Color.PaleVioletRed,
+            Color.YellowGreen,
+            Color.MistyRose
+        };
         public Orario orario = new Orario();
         public TabellaOrari()
         {
@@ -80,25 +88,24 @@ namespace creatore_di_orario_scolastico
                     Giorno = ora.Giorno,
                     NomeDocente = docente.Nome,
                     CognomeDocente = docente.Cognome,
-                    NomeMateria = materia.Nome
+                    NomeMateria = materia.Nome,
+                    IdMateria = materia.idMatPk
                 };
-
-
-            List<string> listaRiga = new List<string>();
+            
+            int contatoreGiorno = 0;
+            int contatoreOra = 1;
+            dataGridView1.Rows.Add(6);
+            dataGridView1.Rows[contatoreGiorno].Cells[0].Value = contatoreGiorno+1;
             foreach ( var rigaOra in query)
             {
-                listaRiga.Add(rigaOra.NomeMateria);
-                if(listaRiga.Count == 5)
+                dataGridView1.Rows[contatoreGiorno].Cells[contatoreOra].Value = rigaOra.NomeMateria;
+                dataGridView1.Rows[contatoreGiorno].Cells[contatoreOra].Style.BackColor = colori[rigaOra.IdMateria];
+                
+                if( ++contatoreOra > 5)
                 {
-                    dataGridView1.Rows.Add(
-                        rigaOra.Giorno,
-                        listaRiga[0],
-                        listaRiga[1],
-                        listaRiga[2],
-                        listaRiga[3],
-                        listaRiga[4]
-                    );
-                    listaRiga.Clear();
+                    contatoreOra = 1;
+                    contatoreGiorno++;
+                    dataGridView1.Rows[contatoreGiorno].Cells[0].Value = contatoreGiorno + 1;
                 }
             }
         }
