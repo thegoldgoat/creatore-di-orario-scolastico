@@ -47,7 +47,7 @@ namespace creatore_di_orario_scolastico
             foreach (ClassiRow classe in tableClassi.Rows)
                 listaClassi.Add(classe.idClaPk);
 
-            int sceltaRandom;
+            int classeRandom;
 
             for (int giorno = 1; giorno <= 5; giorno++)
             {
@@ -59,11 +59,62 @@ namespace creatore_di_orario_scolastico
 
                     for (int docente = 0; docente < 5; docente++)
                     {
-                        // Scelgo una classe a caso
-                        sceltaRandom = randomizzatore.Next(listaPoolClassi.Count);
+                        // Lista con tutti i flag delle classi
+                        List<bool> flagPoolClassi = new List<bool>();
+                        for (int i = 0; i < listaPoolClassi.Count(); i++)
+                            flagPoolClassi.Add(true);
 
-                        tableOrari.Rows.Add(idIncrementaleOrario++, ora, giorno, docente, listaPoolClassi[sceltaRandom], ottieniMateriaDaDocente(docente));
-                        listaPoolClassi.RemoveAt(sceltaRandom);
+                        bool classeAccettata = false;
+
+                        do
+                        {
+                            // Scelgo una classe a caso
+                            classeRandom = rand.Next(listaPoolClassi.Count);
+
+                            // Ottiene tutti gli orari di quella classe in quel giorno per quel docente
+                            var query1 =
+                                from oraQuery in this.tableOre.AsEnumerable()
+                                where oraQuery.Field<int>("Id_classe") == listaPoolClassi[classeRandom]
+                                && oraQuery.Field<string>("Giorno") == giorno
+                                && oraQuery.Field<int>("Id_docente") == docente
+                                let rigaQuery1 = new
+                                {
+                                    Ora = oraQuery.Numero,
+                                    IdDocente = oraQuery.Id_docente
+                                }
+                                select rigaQuery1;
+
+                            switch (query1.Count())
+                            {
+                                case 0:
+                                    // Accettato
+                                    classeAccettata = true;
+                                    break;
+                                case 1:
+                                    // Controlla che sia all'ora precedente, se non lo è rifiuta
+                                    var ultimaOra = query1.Last();
+                                    classeAccettata = (ultimaOra.Ora == ora - 1);
+                                    break;
+                                default:
+                                    // Rifiutato
+                                    break;
+                            }
+                            flagPoolClassi[classeRandom] = classeAccettata;
+
+                            // Controlla che il pool sia maggiore di 1
+                            if (!classeAccettata)
+                            {
+                                // Controlla se i flag del pool sono tutti falsi, se sono falsi significa che nessuna classe è accettabile
+                                if( !flagPoolClassi.Contains(true))
+                                {
+                                    throw new Exception("Riga impossibile da creare!");
+                                }
+                            }
+                        } while (!classeAccettata);
+
+                        // Assegno l'ora
+                        this.Ore.Rows.Add(idOre++, giorno, ora, docente, listaPoolClassi[classeRandom]);
+                        listaPoolClassi.RemoveAt(classeRandom);
                     }
                 }
             }
